@@ -1,3 +1,9 @@
+Preliminary Project Plan Document
+=================================
+
+Version: 1.1
+Date: 23 July 2015
+
 Alright Dave, I stayed up late last night looking into the various ins and outs and came up with a fair bit.
 
 One of the issues is that you are going to Thai in a couple of months, and unfortunately thee is quite a lead time on some of these components from China, say about a month. The LED strips, if ordered today, July 23, arrive Aug 13. So that is something to be aware of. Don’t want the components to arrive and then you leave the following day before I’ve had a chance to put it all together.
@@ -14,10 +20,12 @@ LED Matrix construction;
 LED controller circuit;
 Arduino LED matrix control code;
 
+- Spectrum Analyser (output)
+Arduino Spectrum Analyser output code;
+
 - Spectrum Analyser (input)
 Spectrum Analyser circuit;
 Arduino Spectrum Analyser input code;
-Arduino Spectrum Analyser output code;
 
 - LED Cube
 LED cube construction
@@ -42,7 +50,7 @@ LED Matrix
 
 Current draw of the display
  - One quoted 40Amps!
- - Each LED strip is 0.4A according to the specification (from http://www.ebay.com/itm/151750183791). Is the 0.4A per LED, per strip of 3 LEDs, or per reel?
+ - Each LED strip is 0.4A according to the specification (from http://www.ebay.com/itm/151750183791). Is the 0.4A per LED, per strip of 3 LEDs, or per reel? Awaiting reply from seller.
 
 SPECIFICATIONS:
 LED Type:  5050 PLCC-6 SMT SMD LED
@@ -88,8 +96,13 @@ Is LED matrix buffered?
 
 Requirement for shift register?
 
-Spectrum Analyser
-=================
+Spectrum Analyser (output)
+=========================
+
+A prebuilt Arduino library must exist. Not looked yet.
+
+Spectrum Analyser (input)
+=========================
 
 Would the work load of the processing affect the visual display of the LED Matrix
 
@@ -121,13 +134,35 @@ Hardware Assisted
 NOTE: We want 10 channels, this may not be a sensible number - as for simplicity (read cost), certain hardware or software constraints may limit us to a different number of channels.
 
 Number of channels:
-APAC
+Adafruit
+ - Maxmum frequency is only 4Khz
+APAC (Software solution)
  - FHT steps
  - Binary compatible 8/16/32 channels
  - Sample frequency achieved through Arduino prescaler
  - knocking down the 128-prescaler to 32, we now increase the sample rate by the same factor up to 38.4kHz. Thanks to Nyquist again, that gives us an audio bandwidth of 19.2kHz, which is close enough to 20kHz-perfection.
-MSGEQ7
+MSGEQ7 DIP (Hardware solution)
  - 7 channels
+
+3D Cube
+=======
+
+Two DIY methods found so far:
+
+A prebuilt PCB/Base.
+ - Pricey £55
+ - Small, only 8x8x8
+ - Additional components required
+
+Discrete Components
+ - Power by transistors
+ - Driven by Arduino Mega
+ - Cheap construction
+ - DIY veroboard
+ - Easy (?) to expand to 16x16x16 and beyond?
+ - Smaller still, only 5x5x5
+ - Not excellent build quality
+ - Not excellent aesthetically
 
 
 
@@ -191,8 +226,20 @@ For 3D cube:
 SuperTech-IT RGB 8X8X8 LED Cube PCB/base - http://www.ebay.co.uk/itm/SuperTech-IT-RGB-8X8X8-LED-Cube-PCB-base-for-Arduino-UNO-MEGA-or-ChipKit-UNO32-/221675923125
 
 Costs
-+++++
+=====
 
+Costs for model LED Matrix 
++++++++++++++++++++++++++++
+
+Not done yet
+
+Cost for full size LED Matrix
++++++++++++++++++++++++++++++
+
+Not done yet
+
+General Costs
++++++++++++++
 
 UNO £3-4
 Mega $12/£8 
@@ -206,6 +253,7 @@ Prototype Shield £2
 Breadboard, MB-102 £3.30 for 2
 Spectrum Board, Sparkfun $30
 SuperTech-IT RGB 8X8X8 LED Cube PCB/base £55
+LED $2.50/meter (shipping? was free? now £1.10)
 
 Conclusion
 ==========
