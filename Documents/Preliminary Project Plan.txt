@@ -1,0 +1,223 @@
+Alright Dave, I stayed up late last night looking into the various ins and outs and came up with a fair bit.
+
+One of the issues is that you are going to Thai in a couple of months, and unfortunately thee is quite a lead time on some of these components from China, say about a month. The LED strips, if ordered today, July 23, arrive Aug 13. So that is something to be aware of. Don’t want the components to arrive and then you leave the following day before I’ve had a chance to put it all together.
+
+So, anyway, as we realised yesterday there are quite a few areas to consider, and the project has grown somewhat, into various sub-projects. It is important not to lose focus on what is important, and what is a whim. A priority needs to be applied to each sub-project. 
+
+Project Areas
+=============
+
+The project can be broken down into areas, which in turn can be divided into their main required sub-projects:
+
+- LED 15x10 Matrix (output)
+LED Matrix construction;
+LED controller circuit;
+Arduino LED matrix control code;
+
+- Spectrum Analyser (input)
+Spectrum Analyser circuit;
+Arduino Spectrum Analyser input code;
+Arduino Spectrum Analyser output code;
+
+- LED Cube
+LED cube construction
+LED cube controller circuit
+Arduino LED control code.
+
+- Waveform generator
+iOS app (free)
+
+Process
+=======
+
+Each Area and sub-project require four tasks: 
+ - Customer Requirements;
+ - Design;
+ - Implementation and;
+ - Test
+
+
+LED Matrix
+==========
+
+Current draw of the display
+ - One quoted 40Amps!
+ - Each LED strip is 0.4A according to the specification (from http://www.ebay.com/itm/151750183791). Is the 0.4A per LED, per strip of 3 LEDs, or per reel?
+
+SPECIFICATIONS:
+LED Type:  5050 PLCC-6 SMT SMD LED
+Size: Length x W1.0cm x T0.2cm
+View angle:120°
+Working Current/meter: 0.4A
+Luminous Flux: 260-280 Lumens/Meter
+Working Temperature:-20° to 50°
+Drive Mode:Contant Voltage 
+
+Physical layout
+ - Spacing beten rows
+ - Are the LEDs bright enough to produce a glow that allows spacing between rows to increase, up to 5cm?
+
+Concerns
+ - The requirement for a model is to ensure that the LEDs that we choose are adequate, and suitable for purpose.
+ - Is the brightness of LED sufficient?
+ - Are high power LEDs available?
+ - Width of strip, is 5cm too small.
+
+
+LED Controller Circuit
+======================
+Again different ways of implementing:
+
+ - Discrete components
+   - Using Transistors
+   - lots more work than a pre-built shield: Cabling, Soldering, (Vero) Board design
+   - A good example is shown here, https://lukeorford.files.wordpress.com/2012/05/20120515-185820.jpg
+   - Vero Board map
+
+ - Prebuilt shield
+   - Only 16 channels max on one shield, requires an Arduino Mega for each channel (7 channels = 7 Arduino Megas (@£8 each), 10 channels => 10 Arduino Mega)
+   - 8 Channels on one shield required an UNO @£6.
+
+What sort of interface to the Arduino?
+ - Straight forward pins
+ - SPI interface
+
+Is LED matrix buffered? 
+ - Saves the Arduino having to constantly update, 
+ - flickering could occur under heavy processing load
+
+Requirement for shift register?
+
+Spectrum Analyser
+=================
+
+Would the work load of the processing affect the visual display of the LED Matrix
+
+Frequency Required 20Hz - 20 kHz (audible hearing range)
+
+Many ways of implementing:
+Arduino Software
+ - Is Arduino powerful enough
+PC Software
+ -  No signal processing is done on the Arduino, all signal processing is done on the PC, which then just tells the Arduino what to display.);
+Hardware assisted
+ - Arduino just reads relative/absolute amplitudes per band (MSGEQ7). A lot less coding is required.
+
+
+Arduino Software
+++++++++++++++++
+ - FHT, APAC
+ - Low Frequency, Adafruit
+
+PC Software
++++++++++++
+ - Instructables
+
+Hardware Assisted
++++++++++++++++++
+ - Sparkfun Spectrum Shield, HL1606, Open Electronics
+ - MSGEQ7, tronixstuff
+
+NOTE: We want 10 channels, this may not be a sensible number - as for simplicity (read cost), certain hardware or software constraints may limit us to a different number of channels.
+
+Number of channels:
+APAC
+ - FHT steps
+ - Binary compatible 8/16/32 channels
+ - Sample frequency achieved through Arduino prescaler
+ - knocking down the 128-prescaler to 32, we now increase the sample rate by the same factor up to 38.4kHz. Thanks to Nyquist again, that gives us an audio bandwidth of 19.2kHz, which is close enough to 20kHz-perfection.
+MSGEQ7
+ - 7 channels
+
+
+
+Further Reading
+===============
+
+LED cube control board (pricey)
+http://www.ebay.co.uk/itm/SuperTech-IT-RGB-8X8X8-LED-Cube-PCB-base-for-Arduino-UNO-MEGA-or-ChipKit-UNO32-/221675923125
+
+LED cube 5x5x5 Project (cheap)
+https://lukeorford.wordpress.com/tag/5x5x5
+
+Spectrum Shield (pricey)
+https://www.sparkfun.com/products/13116
+
+HL1606 Strip/ LED Strip/Spectrum Shield (2xMSGEQ7)
+http://www.open-electronics.org/big-spectrum-analyzer-with-arduino/
+
+Using HW Spectrum Analyser - MSGEQ7
+http://tronixstuff.com/2013/01/31/tutorial-arduino-and-the-msgeq7-spectrum-analyzer/
+
+MSGEQ7 Info
+https://www.sparkfun.com/products/10468
+
+Low frequency 0-4.5kHz
+https://learn.adafruit.com/fft-fun-with-fourier-transforms/spectrum-analyzer
+
+
+Software FHT 8/16/32 channel
+http://apcmag.com/arduino-project-audio-spectrum-analyser.htm/
+
+PC Software and Arduino controls lights
+http://www.instructables.com/id/Arduino-Processing-Audio-Spectrum-Analyzer/
+
+
+
+Components (Shopping List)
+==========================
+
+NOTE: Not all items are required, depending on design opted for.
+
+For spectrum analyser input:
+Prototype board shield
+MSDEQ7
+Breadboard MB-102
+Breadboard jack socket
+
+For discrete LED controller board:
+Veroboard 
+Transistors TIP120, or 2N2222
+
+For Prebuilt Shield:
+16 Channel Shield
+8 Channel Shield
+
+For LED Matrix:
+LED Strips
+Wires for cabling
+
+For 3D cube:
+SuperTech-IT RGB 8X8X8 LED Cube PCB/base - http://www.ebay.co.uk/itm/SuperTech-IT-RGB-8X8X8-LED-Cube-PCB-base-for-Arduino-UNO-MEGA-or-ChipKit-UNO32-/221675923125
+
+Costs
++++++
+
+
+UNO £3-4
+Mega $12/£8 
+MSGEQ7 (x2) $5 for 2
+16 Channel relay shields £10
+
+Breadboard Stereo Jack $3.44
+
+Arduino Mic £1
+Prototype Shield £2
+Breadboard, MB-102 £3.30 for 2
+Spectrum Board, Sparkfun $30
+SuperTech-IT RGB 8X8X8 LED Cube PCB/base £55
+
+Conclusion
+==========
+
+It can be done, but may take a while. Prioritising is essential:
+ - LED Matrix, Controller board and Arduino control software is essential (Random graphics can be displayed)
+ - Spectrum Analyser Display Arduino software is second priority, give it a signal and the Spectrum Analyser Display software sends data to the Arduino control software
+ - Spectrum Analyser input is lowest priority.
+ - LED Cube is a whim
+
+
+Notes
+=====
+
+None yet.
