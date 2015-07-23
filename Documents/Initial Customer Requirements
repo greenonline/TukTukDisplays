@@ -1,0 +1,261 @@
+Initial Customer Requirement Document
+=====================================
+
+Version: 1.0
+Date: 23 July 2015
+
+
+Facts
++++++
+
+Van dimensions:
+Van length 2M 
+Van height 2.2M
+
+Colours:
+Red
+Yellow
+Green
+
+Number of rows per colour varies, depending on height, separation and cost (grouping adjacent rows together as a “block” also needs to be considered for luminosity purposes):
+2
+3
+5
+
+
+LED Matrix Dimensions:
+80cm high
+120cm wide (how wide? Van side width or Serving hatch width)
+
+The LED strip matrix:
+#Strips  Width  #LEDs
+	(cm)
+1	5	3
+2	10	6
+6	30	18
+10	50	30
+100	500	300
+
+Assumptions
++++++++++++
+
+Assuming, LED strip vertical separation => 5cm? Is the distance sufficient?
+Or arranged LEDs  in a square, so equidistant to the separation of the LEDs on the strip, i.e. 2.5cm? Is it 2.5cm? 3LEDs per strip, strip length is 5cm (5/3, or 5/2?)
+
+Calculations
+++++++++++++
+
+Taking 5cm separation between rows, for a height of 80cm gives 16 rows.
+80 / 5 = 16
+
+Number of minimum length LED strips for width of van (2M), with 5cm for each strip gives 40 strips
+200 / 5 = 40
+
+Use 4 strips per channel gives 10 channels
+40 / 4 = 10
+
+Hence, the dimensions of the matrix in strips is:
+16 rows
+40 strips (or 10 channels)
+
+Note: NOT using the full van side width, and only using the below serving hatch area 
+serving hatch width = width of van side - (width of speakers x 2) 
+
+Note: Instead of 16 rows, use 15 rows, as that divides by the 3 colours nicely, giving 5 rows per colour. IF the separation is changed then the number of rows will increase, but these rows could be “blocked together” so that one increment of volume list two rows at a time. For example, if the row separation is reduced from 5cm to 2.5cm then that would give 30 rows, but grouping two rows together, would still result in 15 different/independent “volume rows”. Therefore the number of controllers (see below) has not increased.
+
+
+
+For the model
++++++++++++++
+
+Each channel, or column, of one 5cm strips at 15 rows is 75cm (not 45cm!!!!)
+5 x 15 = 75cm
+
+1m LEDs = £1.60
+3M LEDs = £4.80
+
+6 strips wide (????)
+2 full size channels (?????)
+
+NOTE: As an aside, if each channel’s total strip length requirement were 45cm (which it isn’t! That would be the case if each strip was 3cm, not 5cm), then we calculated that a one meter strip could do two columns, or channels.
+Then, getting three 1 meter lengths (one for each colour), then we could do 6 columns, or channels - where each column, or channel is 3cm wide. Which is enough for the model.
+
+However, as each strip is 5cm (and not 3cm!), this gives 75cm of LEDs is required per column, or channel, for a column width of 5cm. So 1.5m is required for two columns, so a 2M length with 0.5m wastage.
+So, 6m for the three colours. Which is £9.60 for the model, not £4.80
+
+For the full size display#1
++++++++++++++++++++++++++++
+
+Requirements#1:
+Using the original strips (10 LEDs/strip @ £1 per strip)
+16 rows
+6 columns (6 x LED strips = 60 LEDs)
+96 strips @ 80p = £80
+
+For the full size display#2
++++++++++++++++++++++++++++
+
+Using the width of the van (2M), and 5M rolls gives a ratio of 0.4 or each roll can do 2.5 rows
+width of van / length of roll
+2 / 5 = 0.4
+
+Requirements#2:
+Using the roll of strips (3 LEDs per strip @ £1.60 per meter)
+15 rows
+3 colours
+5 rows per colour
+10 columns @ 20cm per column width (20cm = 12 LEDs/column) 
+
+Calc:
+10 columns @ 20cm = 2M per row
+5 rows per colour = 10M
+3 colours = 30M
+
+Total length of strips required = 30M
+With 3 colours, that is 10M of each colour
+30 / 3 = 10
+Each roll is 5M, so we require 2 rolls of each colour
+10 / 5 = 2
+2 rolls of each colour, and 3 colours gives 6 rolls required in total
+3 x 2 = 6
+Each roll is £8, so a total of £48
+6 x 8 = 48
+
+
+
+Number of controllers
++++++++++++++++++++++
+
+Columns/Channels	Rows	Controllers
+10			6	60
+10			15	150
+6			3	18  (row is 2 strips high, both strips are lit as a block, not independent)
+6			15	90
+5			12	60
+
+6 strips wide x 15 high(???)
+
+——————
+
+4.80 (????)
+200 x 500 (?????)
+
+
+————
+
+
+Addendum
+========
+
+My thoughts were making it 8 columns instead that sounded easier, i'm still waiting product details for off the shelf bodies, so we will make the 8 column fit the space
+
+Height and rows don't really matter at this stage but an even colour ratio is desired
+
+
+Conclusions
+===========
+
+It is not clear the width of the LED matrix, and hence the number of channels (2m, or 1.20?) (10 or 6?)
+
+It is not clear the number of rows, i.e. the resolution of the amplitude of each frequency
+
+Did you want two of the fourth one or just two of the third? Referring to the extra links.
+
+Extra Links
+===========
+
+Giant LED Graphic Music Display (DJ Spectrum Analyser)
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+32x32
+Sold out
+https://www.youtube.com/watch?v=DUoX9fDibYk
+http://www.techmoan.com/blog/2014/1/12/adding-80s-flair-to-modern-digital-music-playback.html
+http://www.ebay.co.uk/itm/301436841241?clk_rvr_id=871865584548&rmvSB=true
+
+
+10 band audio spectrum analyzer with 400 LED FullHD
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+https://www.youtube.com/watch?v=9SK2AxfELfw
+This huge spectrum analyzer is based on previously build vu-meters.
+Simply filters the frequency of the sound source to DC level by bandpass filters on main board.(32Hz, 64Hz, 125Hz, 250Hz, 500Hz, 1kHz, 2kHz, 4kHz, 8kHz, 16kHz)
+
+All device contains 400 LEDs, 900 rezistors, 106 IOs, crazy project :D
+
+Power: 12V/7,5A (peak)
+
+Notes: No details how to build though.
+
+
+
+“or just two of these at each side”
+LED VU meter tower using PulseAudio
++++++++++++++++++++++++++++++++++++
+https://www.youtube.com/watch?v=Rul0JDoE6CE
+
+
+Arduino Spectrum Analyzer | 16x32 RGB LED-matrix
+++++++++++++++++++++++++++++++++++++++++++++++++
+https://www.youtube.com/watch?v=OOgNcSBfHvI
+
+Our latest project : https://www.youtube.com/watch?v=sXsGk...
+
+0:00 - 3:00 = Music connected
+3:00 - 3:42 = Frequency generator connected
+3:42 - 4:01 = Pictures
+
+My brother and I build this spectrum analyzer using a 16x32 Adafruit LED-matrix and Arduino Uno. This was our project for school.
+
+It has 4 different display modes:
+-Blue
+-Red
+-Green;Yellow;Red
+-Purple to Blue
+
+Sample frequency = 9600Hz
+Number of samples = 128
+Fundamental frequency = 75Hz
+
+We used an audio splitter so one side goes from the Ipod to the microcontroller (Arduino Uno). Processing the signal and displaying it on the LED-matrix.
+The second signal goes to earphones. That's why it's so silent... If we wanted to use speakers, there wasn't anything left of the audio signal to go to the Arduino Uno.
+We could fix this with an opamp though.
+
+Used components :
+-Arduino Uno
+-Arduino Shield
+-Adafruit 16x32 LED-matrix
+-External supply
+-Resistors
+-Capacitors
+-LM7805
+-Shmitt-trigger
+-Push buttons
+-Audio input jack
+-Audio splitter
+-Header pin
+-Plexiglass (perspex)
+-Bolts and nuts
+
+Our latest project : https://www.youtube.com/watch?v=sXsGk...
+
+16x32 LED-matrix penal was bought at http://www.adafruit.com/products/420
+
+
+“the last one doesn't look like many lights either full effect words graphic etc etc, go to 5.02 min in.”
+LED Curtain is being used as DJ BOOTH
++++++++++++++++++++++++++++++++++++++
+which is very popular. By E-mail:marketing@huasun-tech.com
+https://www.youtube.com/watch?v=_oztrIwt3So
+
+
+3D Cube
+
+3D Spectrum Analyser (1280 LEDs) - MAKING OF
+++++++++++++++++++++++++++++++++++++++++++++
+https://www.youtube.com/watch?v=Vn39txtVIHc
+
+“not as effective but cheap”
+Make LEDs flash to music
+++++++++++++++++++++++++
+https://www.youtube.com/watch?v=OOAZjFh_Y9Y
+
+
