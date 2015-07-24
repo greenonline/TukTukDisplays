@@ -1,8 +1,8 @@
 Preliminary Project Plan Document
 =================================
 
-Version: 1.1
-Date: 23 July 2015
+Version: 1.2
+Date: 24 July 2015
 
 Alright Dave, I stayed up late last night looking into the various ins and outs and came up with a fair bit.
 
@@ -50,7 +50,8 @@ LED Matrix
 
 Current draw of the display
  - One quoted 40Amps!
- - Each LED strip is 0.4A according to the specification (from http://www.ebay.com/itm/151750183791). Is the 0.4A per LED, per strip of 3 LEDs, or per reel? Awaiting reply from seller.
+ - Each LED strip is 0.4A/m according to the specification (from http://www.ebay.com/itm/151750183791). Is the 0.4A per LED, per strip of 3 LEDs, or per reel? Awaiting reply from seller.
+ - Seller confirms that current is per meter. So, 1 meter, 60 LEDs, consume 0.4A. One reel of 5m will consume 5 x 0.4 = 2A
 
 SPECIFICATIONS:
 LED Type:  5050 PLCC-6 SMT SMD LED
@@ -170,7 +171,13 @@ Further Reading
 ===============
 
 LED cube control board (pricey)
+http://www.instructables.com/id/8X8X8-RGB-LED-Cube/
 http://www.ebay.co.uk/itm/SuperTech-IT-RGB-8X8X8-LED-Cube-PCB-base-for-Arduino-UNO-MEGA-or-ChipKit-UNO32-/221675923125
+$84.95
+http://www.ebay.com/itm/DM13A-Component-kit-for-8X8X8-RGB-LED-Cube-Base-Driver-board-by-SuperTech-IT-/121379006776
+$23.60
+http://www.ebay.com/itm/600pcs-5mm-4pin-RGB-LED-common-anode-for-8x8x8-LED-Cube-SuperTech-IT-Uno32-/121379033667
+$41.99
 
 LED cube 5x5x5 Project (cheap)
 https://lukeorford.wordpress.com/tag/5x5x5
