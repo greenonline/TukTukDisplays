@@ -1,0 +1,136 @@
+Revised Customer Requirements Document
+======================================
+
+Version: 1.0
+Date: 29 July 2015
+
+how many leds/cost
+
+ - strip (1 each colour)
+ - rgb led
+
+1/4 (1:4) size:
+1 meter strip gives two rows of each colour)
+
+RGB LED
++++++++
+$4 for 50
+http://www.ebay.com/sch/i.html?_sacat=0&_nkw=rgb+led+5mm&_frs=1
+
+RGB LED controller IC
++++++++++++++++++++++
+http://www.onsemi.com/pub_link/Collateral/NCP5623-D.PDF
+
+LED Matrix controllers
+++++++++++++++++++++++
+Adafruit FadeCandy - Dithering USB-Controlled Driver for NeoPixels
+http://www.maplin.co.uk/p/adafruit-fadecandy-dithering-usb-controlled-driver-for-neopixels-a63qn
+Fadecandy works with Adafruit's popular WS2811/WS2812 LEDs. Each controller board supports up to 512 LEDs, arranged as 8 strips of 64 each.
+The firmware was originally developed to run the Ardent Mobile Cloud Platform, a Burning Man project which used 2500 LEDs to project ever-changing rolling cloud patterns onto the interior of a translucent plastic sculpture. It used five Fadecandy boards, a single Raspberry Pi, and the effects were written in a mixture of C and Python. The lighting on this project blew people away, and it made me realize just how much potential there is for creative lighting, but it takes significant technical drudgery to get beyond frenetic-rainbow-fade into territory where the lighting can really add to an art piece instead of distracting from it.
+
+
+Size of LED
++++++++++++
+5mm LED RGB more luminance than the LED SMD3250 strip
+
+Go for bigger bulb:
+Diffused LED 1.8mm 3mm 5mm 8mm 10mm 20mm Red Blue White Green Yellow Orange
+http://www.ebay.co.uk/itm/Diffused-LED-1-8mm-3mm-5mm-8mm-10mm-20mm-Red-Blue-White-Green-Yellow-Orange-/251351814776?pt=LH_DefaultDomain_3&var=&hash=item3a85bc5278
+
+LED curtain
++++++++++++
+https://www.youtube.com/watch?v=_oztrIwt3So
+
+Resolution 16x56 = 896 LEDs (2688 SMB 5050) 
+12V 700W
+ledlightdesign.nl
+pro-djbooth.com
+
+896 LEDs
+Number of 50 RGB LED packs = 896 / 50 = 17.92 = 18
+
+50 LEDs @ £4 = 18packs x £4 =£72
+
+
+—————
+
+
+
+Minimum size for 20mm LEDs (bunched together and no gap)
+Height = 20mm x 16 rows = 320mm = 32cm
+Width = 
+
+
+
+Height of board depends upon eskis
+
+Eski Height = 610mm
+
+So, Worktop 900mm
+
+Board 800mm 
+
+800mm / 16 = 5cm apart the LEDs are.
+
+—————
+
+A-board
++++++++
+Scrolling LEDs Legible A board = Menu Board A4 portrait (A1 size)
+Implement with Curtain RGB LED
+
+Various Heights/Levels of spectrum
+++++++++++++++++++++++++++++++++++
+Spectrum 7 levels (3 bits) 2xR, 2xY, 3xG (looks more like standard VU meter).
+Spectrum 15 levels (4 bits) 5xR, 5xY, 5xG (equal height bands).
+
+
+One light, or “pixel”, is 3 columns  going up the bands
+One row can be 2 or 3 strips of LEDs
+ - Could be better to use a block of 3 strips for one pixel => 3 (LEDs wide on 1 strip) x 3 (strips high) = 9 LEDs square
+
+
+
+Graphic Effects
++++++++++++++++
+
+Inverted image as a feature.
+Drops down fade
+Dying spectrum analyser fade
+Inverted spectrum analyser
+Full screen on
+
+
+KISS!!! Spectrum analyser only (no dancing ladies)
+
+2688 SMB 5050 
++++++++++++++
+
+(http://www.amazon.co.uk/home/dp/B007M4M3ZM £11.06 150LEDs/5M 36W/5M)
+DQ-MOD-2688,China LED module light with SMD 5630
+http://m.globalmarket.com/product-info/led-module-light-with-smd-5630-3pcs-blue-ip65-2403802.html
+Renard Pixel String
+http://doityourselfchristmas.com/forums/archive/index.php/t-10626.html
+10x G4 Light Bulb Lamp 5050 SMB 9 LED Warm White Car Boat Home Spot Bulb DC 12V
+http://www.ebay.co.uk/itm/10x-G4-Light-Bulb-Lamp-5050-SMB-9-LED-Warm-White-Car-Boat-Home-Spot-Bulb-DC-12V-/121123017571?pt=LH_DefaultDomain_3&hash=item1c337e9363
+
+
+—————
+
+Pixel dimensions
+++++++++++++++++
+
+Looking at 12V 3ft-165ft 1m 5m 10m 20m 50m flexible 5050 smd LED strip light 60Leds/Meter
+
+http://www.ebay.co.uk/itm/151750183791?_trksid=p2055119.m1438.l2649&var=450946429784&ssPageName=STRK%3AMEBIDX%3AIT
+
+Width of strip is 0.9cm
+
+Make one pixel one strip wide and three strips high, to have 3 strips x3 LEDs => 9 LEDs is one pixel.
+
+LED local sources
++++++++++++++++++
+
+http://www.brightonledlighting.com/shop/index.php?main_page=index&cPath=20
+£33 for 5m
+
