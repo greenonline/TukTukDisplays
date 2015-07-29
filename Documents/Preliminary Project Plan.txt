@@ -1,8 +1,8 @@
 Preliminary Project Plan Document
 =================================
 
-Version: 1.2
-Date: 24 July 2015
+Version: 1.3
+Date: 29 July 2015
 
 Alright Dave, I stayed up late last night looking into the various ins and outs and came up with a fair bit.
 
@@ -182,6 +182,11 @@ $41.99
 LED cube 5x5x5 Project (cheap)
 https://lukeorford.wordpress.com/tag/5x5x5
 
+3D LED RGB Cube Laying Screen Display H48 Dance
+https://www.youtube.com/watch?v=dVHP7Nhsn4E
+ - dancers
+
+
 Spectrum Shield (pricey)
 https://www.sparkfun.com/products/13116
 
@@ -203,8 +208,6 @@ http://apcmag.com/arduino-project-audio-spectrum-analyser.htm/
 
 PC Software and Arduino controls lights
 http://www.instructables.com/id/Arduino-Processing-Audio-Spectrum-Analyzer/
-
-
 
 Components (Shopping List)
 ==========================
